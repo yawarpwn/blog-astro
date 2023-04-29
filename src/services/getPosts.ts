@@ -6,20 +6,18 @@ const entries = await contentfulClient.getEntries<BlogPost>({
   content_type: "blog",
 });
 
+export function getPosts() {
+  const posts = entries.items.map((item) => {
+    const { title, description, slug, date, content } = item.fields;
 
-export function getPosts () {
+    return {
+      title,
+      description,
+      date: new Date(date).toLocaleString(),
+      slug,
+      content: documentToHtmlString(content),
+    };
+  });
 
-const posts = entries.items.map((item) => {
-  const { title, description, slug, date, content } = item.fields;
-
-  return {
-    title,
-    description,
-    date: new Date(date).toLocaleString(),
-    slug,
-      content: documentToHtmlString(content)
-  };
-});
-
-  return posts
+  return posts;
 }

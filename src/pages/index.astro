@@ -1,13 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getPosts } from "../services/getPosts";
+import Layout from '../layouts/Layout.astro'
+import { getPosts } from '../services/getPosts'
 
 const posts = await getPosts()
-
 ---
 
-<Layout title='Blog'>
-  <h1>My Blog</h1>
+<Layout title="Blog">
+  <h1>Johneyder Blog</h1>
   <ul>
     {
       posts.map((post) => (
@@ -22,3 +21,8 @@ const posts = await getPosts()
     }
   </ul>
 </Layout>
+<style>
+  h1 {
+    color: orange;
+  }
+</style>
