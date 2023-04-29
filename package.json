@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^2.2.2",
     "@contentful/rich-text-html-renderer": "16.0.3",
     "@contentful/rich-text-types": "16.0.3",
     "astro": "^2.3.2",
